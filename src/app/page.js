@@ -5,7 +5,7 @@ import HomePage from "./home/page";
 import { useState } from "react";
 
 export default function Home() {
-  const [active, setActive] = useState(false);
+  const [actives, setActives] = useState(false);
 
   return <HomePage />;
 }
