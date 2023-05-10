@@ -10,11 +10,11 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "./homeSlider.scss";
 
 const contentStyle = {
-  // height: "100vh",
-  // display: "flex",
-  // justifyContent: "center",
-  // cursor: "pointer",
-  // position: "relative",
+  height: "100vh",
+  display: "flex",
+  justifyContent: "center",
+  cursor: "pointer",
+  position: "relative",
 };
 
 export default function HomeSlider() {
@@ -50,7 +50,7 @@ export default function HomeSlider() {
               backgroundImage: `url(${src})`,
             }}
           ></div>
-          <img alt="" src={src} className="image" />
+          <img alt="home-slider" src={src} className="image" />
         </div>
       );
     }
