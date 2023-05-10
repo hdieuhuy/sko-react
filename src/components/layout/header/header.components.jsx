@@ -15,6 +15,7 @@ import {
 
 import "./header.scss";
 import Link from "next/link";
+import { useScrollPosition } from "@/hooks";
 
 const { Header } = Layout;
 
@@ -24,6 +25,10 @@ const HeaderComponent = () => {
     color: "#616161",
     cursor: "pointer",
   };
+
+  const scrollPosition = useScrollPosition();
+
+  console.log({ scrollPosition });
 
   const actionItems = [
     {
