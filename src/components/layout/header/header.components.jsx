@@ -14,6 +14,7 @@ import {
 } from "react-icons/md";
 
 import "./header.scss";
+import Link from "next/link";
 
 const { Header } = Layout;
 
@@ -50,7 +51,9 @@ const HeaderComponent = () => {
             }}
           >
             <div className="logo" style={{ marginRight: 50, height: "100%" }}>
-              <Image src={Logo} alt="logo" />
+              <Link href="/">
+                <Image src={Logo} alt="logo" />
+              </Link>
             </div>
 
             <div className="menu">
