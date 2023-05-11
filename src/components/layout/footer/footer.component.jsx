@@ -72,7 +72,6 @@ const FooterComponent = () => {
             <Typography.Text
               style={{
                 color: "#212121",
-                fontWeight: 500,
                 marginLeft: 8,
                 lineHeight: 1.75,
               }}
@@ -87,7 +86,6 @@ const FooterComponent = () => {
             <Typography.Text
               style={{
                 color: "#212121",
-                fontWeight: 500,
                 marginLeft: 8,
                 lineHeight: 1.75,
               }}

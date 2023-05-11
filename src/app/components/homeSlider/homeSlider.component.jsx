@@ -69,7 +69,13 @@ export default function HomeSlider() {
   return (
     <div className="home-slider">
       <LeftOutlined onClick={prev} className="icon left-icon" />
-      <Carousel autoplay autoplaySpeed={10000} dots ref={carouselRef}>
+      <Carousel
+        autoplay
+        autoplaySpeed={10000}
+        dots
+        ref={carouselRef}
+        infinite={false}
+      >
         {[
           {
             image:

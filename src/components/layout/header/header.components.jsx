@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Col, Layout, Row, Space } from "antd";
 import Image from "next/image";
@@ -15,20 +15,20 @@ import {
 
 import "./header.scss";
 import Link from "next/link";
-import { useScrollPosition } from "@/hooks";
+import { usePathname } from "next/navigation";
 
 const { Header } = Layout;
 
 const HeaderComponent = () => {
+  const [sticyHeader, setStickyHeader] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const styleIcon = {
     size: 28,
     color: "#616161",
     cursor: "pointer",
   };
-
-  const scrollPosition = useScrollPosition();
-
-  console.log({ scrollPosition });
 
   const actionItems = [
     {
@@ -45,8 +45,19 @@ const HeaderComponent = () => {
     },
   ];
 
+  useEffect(() => {
+    const trackScrolling = () => {
+      if (window.scrollY > 50) setStickyHeader(true);
+      else setStickyHeader(false);
+    };
+
+    document.addEventListener("scroll", trackScrolling);
+
+    return () => document.removeEventListener("scroll", trackScrolling);
+  }, []);
+
   return (
-    <Header>
+    <Header className={sticyHeader || !isHomePage ? "bgWhite" : ""}>
       <Row className="main-header">
         <Col xl={12}>
           <Row
