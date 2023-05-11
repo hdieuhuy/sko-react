@@ -115,11 +115,9 @@ export default function IntroduceContainer() {
             <Carousel slidesToShow={3} slidesToScroll={3}>
               {/* <Space size={28}> */}
               {showroomItems.map((item, index) => (
-                <img
-                  key={`showroom-item-${index}`}
-                  src={item.image}
-                  style={{ marginRight: 28 }}
-                />
+                <div>
+                  <img key={`showroom-item-${index}`} src={item.image} />
+                </div>
                 //   abc
                 // </div>
               ))}
