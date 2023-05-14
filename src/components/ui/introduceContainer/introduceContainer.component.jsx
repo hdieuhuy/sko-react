@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Carousel, Col, Row, Space, Typography } from "antd";
+import { Button, Carousel, Col, Row, Space, Typography } from "antd";
 import "./introduceContainer.scss";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
@@ -85,18 +85,7 @@ export default function IntroduceContainer() {
             }}
             className="tab-child"
           >
-            <Typography.Title
-              level={2}
-              style={{
-                textAlign: "center",
-                fontFamily: "serif",
-                fontSize: 32,
-                marginBottom: 0,
-                textTransform: "uppercase",
-              }}
-            >
-              {currentTab.label}
-            </Typography.Title>
+            <Typography.Title level={2}>{currentTab.label}</Typography.Title>
 
             {currentTab.child.map((item, index) => (
               <Typography.Text
@@ -132,7 +121,22 @@ export default function IntroduceContainer() {
                 ref={carouselRef}
               >
                 {showroomItems.map((item, index) => (
-                  <img key={`showroom-item-${index}`} src={item.image} />
+                  <div className="showroom-image">
+                    <img key={`showroom-item-${index}`} src={item.image} />
+                    <div className="info">
+                      <Row
+                        justify="center"
+                        align="middle"
+                        style={{
+                          height: "100%",
+                        }}
+                      >
+                        <Typography.Text>2 Ngày 1 Đêm</Typography.Text>
+                      </Row>
+
+                      <Button type="text">View more</Button>
+                    </div>
+                  </div>
                 ))}
               </Carousel>
               <MdChevronRight onClick={next} className="icon right" />

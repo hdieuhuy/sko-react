@@ -1,0 +1,12 @@
+.success-stories {
+  .ant-divider {
+    &::after,
+    &::before {
+      background-color: #212121;
+    }
+
+    &:last-child {
+      background-color: #212121;
+    }
+  }
+}
